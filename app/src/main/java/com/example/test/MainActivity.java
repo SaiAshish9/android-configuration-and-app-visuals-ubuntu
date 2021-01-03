@@ -1,46 +1,48 @@
 package com.example.test;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
+    private SeekBar seekBar;
+    private TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        radioGroup = (RadioGroup) findViewById(R.id.rbg);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        result =(TextView) findViewById(R.id.resSeek);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                radioButton = (RadioButton) findViewById(checkedId);
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Log.d("1","1");
+                result.setText(seekBar.getProgress() + "/" + seekBar.getMax());
+            }
 
-                switch (radioButton.getId()) {
-                    case R.id.rb1: {
-                        if (radioButton.isChecked()) {
-                            Log.d("RD", "yes !!");
-                        }
-                    }
-                    break;
-                    case R.id.rb2: {
-                        if (radioButton.isChecked()) {
-                            Log.d("RD", "no !!");
-                        }
-                    }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Log.d("2","2");
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Log.d("3","3");
+                if(seekBar.getProgress()>=7){
+                    result.setTextColor(Color.RED);
                 }
-
             }
         });
+
 
     }
 
