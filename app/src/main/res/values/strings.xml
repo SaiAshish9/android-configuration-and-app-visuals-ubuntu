@@ -5,4 +5,5 @@
     <string name="show_text">show me</string>
     <string name="error_msg">Please enter valid input</string>
     <string name="try_me">try me</string>
+    <string name="yes">yes</string>
 </resources>
