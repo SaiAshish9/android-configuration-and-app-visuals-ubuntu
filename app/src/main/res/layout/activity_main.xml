@@ -9,11 +9,13 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:text="Hello World!"
+        android:textSize="36sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,13 +23,13 @@
         app:layout_constraintVertical_bias="0.484" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="95dp"
-        android:layout_height="61dp"
+        android:id="@+id/mButton"
+        android:layout_width="160dp"
+        android:layout_height="69dp"
         android:layout_marginBottom="16dp"
         android:text="123"
         android:textColor="@color/purple_200"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/mTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent" />
