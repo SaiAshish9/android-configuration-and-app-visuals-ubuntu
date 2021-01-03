@@ -1,4 +1,5 @@
 ```
+F2 -> BIOS -> Configuration -> Intel Virtual Technology -> enabled -> True
 https://developer.android.com/studio/run/emulator-acceleration?utm_source=android-studio#vm-linux
 
 ```
