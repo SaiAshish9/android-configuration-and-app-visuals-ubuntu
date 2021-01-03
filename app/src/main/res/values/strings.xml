@@ -1,9 +1,10 @@
 <resources>
 <!--    <string name="app_name">METRES TO INCHES</string>-->
-    <string name="app_name">Seekbar</string>
+    <string name="app_name">Toggle Buttons</string>
     <string name="button_name">My Button Name</string>
     <string name="show_text">show me</string>
     <string name="error_msg">Please enter valid input</string>
     <string name="try_me">try me</string>
     <string name="yes">yes</string>
+    <string name="hide_seek"><![CDATA[Hide & Seek]]></string>
 </resources>
