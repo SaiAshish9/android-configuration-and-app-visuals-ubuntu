@@ -7,13 +7,91 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/alertBtn"
+    <EditText
+        android:id="@+id/tipsTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/alert"
+        android:ems="10"
+        android:hint="bill"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
+
+    <SeekBar
+        android:id="@+id/tipsSB"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:max="20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipsTF"
+        app:layout_constraintVertical_bias="0.154" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="211dp"
+        android:layout_height="34dp"
+        android:text="Tips Percentage"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tipsSB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipsTF" />
+
+    <Button
+        android:id="@+id/tipBtn"
+        android:layout_width="99dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="304dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tipsSB" />
+
+    <TextView
+        android:id="@+id/tipsRes"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipsSB"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <TextView
+        android:id="@+id/tipsTB"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipsSB"
+        app:layout_constraintVertical_bias="0.667" />
+
+    <TextView
+        android:id="@+id/textViewSB"
+        android:layout_width="106dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="24dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tipsRes"
+        app:layout_constraintEnd_toStartOf="@+id/tipBtn"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipsSB"
+        app:layout_constraintVertical_bias="0.276" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
