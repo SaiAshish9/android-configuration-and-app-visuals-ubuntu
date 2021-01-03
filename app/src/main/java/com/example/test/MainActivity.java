@@ -1,46 +1,52 @@
 package com.example.test;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
-    private CheckBox cb1;
-    private CheckBox cb2;
-    private CheckBox cb3;
-
-    private Button showBtn;
-    private TextView showTV;
-
-
+    private AlertDialog.Builder alertDialog;
+    private Button showDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cb1=(CheckBox) findViewById(R.id.cb1);
-        cb2= (CheckBox) findViewById(R.id.cb2);
-        showBtn=(Button) findViewById(R.id.cbBtn);
-        showTV=(TextView) findViewById(R.id.cbText);
+        showDialog = (Button) findViewById(R.id.alertBtn);
 
-        showBtn.setOnClickListener(new View.OnClickListener() {
+
+        showDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StringBuilder sb= new StringBuilder();
-                sb.append(cb1.getText().toString()  + " : "+cb1.isChecked()+"  ");
-                sb.append(cb2.getText().toString() +" " + cb2.isChecked());
-                showTV.setVisibility(View.VISIBLE);
-                showTV.setText(sb);
+                alertDialog = new AlertDialog.Builder(MainActivity.this);
+                alertDialog.setTitle(getResources().getString(R.string.title));
+                alertDialog.setMessage(getResources().getString(R.string.title));
+                alertDialog.setCancelable(false);
+                alertDialog.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.this.finish();
+                    }
+                });
+                alertDialog.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog dialog = alertDialog.create();
+                dialog.show();
             }
         });
+
 
     }
 
